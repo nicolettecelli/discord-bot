@@ -1,4 +1,4 @@
-import discord
+import discord, threading, asyncio
 from discord.ext import commands
 from bot_config import token
 
@@ -13,9 +13,9 @@ async def on_ready():
     print("-------------------------------------")
 
 # ping command
-@client.command(pass_context = True)
+@client.command(pass_context=True)
 async def ping(ctx):
-    await client.say("Hello!")
+    await client.say("Pong!")
     # tts version:
     #await client.send_message(ctx.message.channel, "Suhhhh dude", tts=True)
 
@@ -44,5 +44,10 @@ async def on_message(message):
         dad_joke = "Hi back, I'm {}!".format(client.user.name)
         # Send the dad joke
         await client.send_message(message.channel, dad_joke)
+
+    else:
+        await client.process_commands(message)
+#
+
 
 client.run(token)

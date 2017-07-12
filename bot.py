@@ -19,9 +19,6 @@ async def ping(ctx):
     # tts version:
     #await client.send_message(ctx.message.channel, "Suhhhh dude", tts=True)
 
-client.run(token)
-
-
 #May move these to a different .py.  Create a function instead would be better.
 #Trigger Dad/Robert Joke for "I'm Back"
 
@@ -45,3 +42,6 @@ async def on_message(self, message):
         dad_Joke= "Hi back, I'm" + self
 # Send the dad joke
         await self.send_message(message.channel, dad_Joke)
+
+client.run(token)
+

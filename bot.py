@@ -22,26 +22,26 @@ async def ping(ctx):
 #May move these to a different .py.  Create a function instead would be better.
 #Trigger Dad/Robert Joke for "I'm Back"
 
-@client.Event
-async def on_message(self, message):
 
-#Define normal person's correct grammar.  It's in incorrect case to save using .lower()
-    trigger = "i'm back"
-#Define degenerate speak
-    grammar_terrorist_trigger = "im back"
-#Get the message, convert it to str, change it to lowercase, and then overwrite the original message.
-    message.content=message.content.lower();
-#!!!!IMPORTANT!!!! Make sure to define the dad joke below!!! I added it there so it's only created if the if statement returns true
-#Can probably move here if it doesn't make a difference for the sake of readability
-
-
-
-#If the message contains @trigger or @grammer_terrorist_trigger, send the Dad Joke
-    if (trigger or grammar_terrorist_trigger in message.content):
-#Define dad joke.  Have not tested this concatenation or event what self returns.
-        dad_Joke= "Hi back, I'm" + self
-# Send the dad joke
-        await self.send_message(message.channel, dad_Joke)
+# async def on_message(message):
+#
+# #Define normal person's correct grammar.  It's in incorrect case to save using .lower()
+#     trigger = "i'm back"
+# #Define degenerate speak
+#     grammar_terrorist_trigger = "im back"
+# #Get the message, convert it to str, change it to lowercase, and then overwrite the original message.
+#     message.content=message.content.lower();
+# #!!!!IMPORTANT!!!! Make sure to define the dad joke below!!! I added it there so it's only created if the if statement returns true
+# #Can probably move here if it doesn't make a difference for the sake of readability
+#
+#
+#
+# #If the message contains @trigger or @grammer_terrorist_trigger, send the Dad Joke
+#     if (trigger or grammar_terrorist_trigger in message.content):
+# #Define dad joke.  Have not tested this concatenation or event what self returns.
+#         dad_Joke= "Hi back, I'm" + client.user.name
+# # Send the dad joke
+#         await client.send_message(message.channel, dad_Joke)
 
 client.run(token)
 

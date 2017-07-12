@@ -44,7 +44,7 @@ async def on_message(message):
         dad_joke = "Hi back, I'm {}!".format(client.user.name)
         # Send the dad joke
         await client.send_message(message.channel, dad_joke)
-
+        await client.process_commands(message)
     else:
         await client.process_commands(message)
 #

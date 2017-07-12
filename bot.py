@@ -24,6 +24,8 @@ client.run(token)
 
 #May move these to a different .py.  Create a function instead would be better.
 #Trigger Dad/Robert Joke for "I'm Back"
+
+@client.Event
 async def on_message(self, message):
 
 #Define normal person's correct grammar.  It's in incorrect case to save using .lower()

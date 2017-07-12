@@ -1,6 +1,9 @@
 # Config file
 bot_config.py
 
+# Dylan's garbage
+.idea/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

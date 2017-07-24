@@ -45,9 +45,13 @@ async def on_message(message):
         # Send the dad joke
         await client.send_message(message.channel, dad_joke)
 
+
     else:
         await client.process_commands(message)
 #
-
+@client.event
+async def on_message_delete(message):
+    person=message.author
+    await client.send_message(message.channel,  "Message was deleted by {}".format(person) )
 
 client.run(token)

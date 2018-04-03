@@ -1,5 +1,5 @@
 # Butter-Bot
-A chat bot for girls with daddy issues.
+A useless bot for our Discord server
 
 [Invite Link](https://discordapp.com/oauth2/authorize?client_id=334520050855968770&scope=bot&permissions=0)
 

@@ -1,6 +1,9 @@
 import discord, threading, asyncio
 from discord.ext import commands
+from discord.voice_client import VoiceClient
 from bot_config import token
+
+startup_extensions = ["Music"]
 
 Client = discord.Client()
 client = commands.Bot(command_prefix = "?")
@@ -12,9 +15,14 @@ async def on_ready():
     print("ID: {}".format(client.user.id))
     print("-------------------------------------")
 
+class Main_Commands():
+    def __init__(self, client):
+        self.client = client
+
 # ping command
 @client.command(pass_context=True)
 async def ping(ctx):
+    """Ping command."""
     await client.say("Pong!")
     # tts version:
     #await client.send_message(ctx.message.channel, "Suhhhh dude", tts=True)
@@ -49,9 +57,17 @@ async def on_message(message):
     else:
         await client.process_commands(message)
 #
-@client.event
-async def on_message_delete(message):
-    person=message.author
-    await client.send_message(message.channel,  "Message was deleted by {}".format(person) )
+#@client.event
+#async def on_message_delete(message):
+#    person=message.author
+#    await client.send_message(message.channel,  "Message was deleted by {}".format(person) )
+
+if __name__ == "__main__":
+    for extension in startup_extensions:
+        try:
+            client.load_extension(extension)
+        except Exception as e:
+            exc = "{}: {}".format(type(e).__name__, e)
+            print("Failed to load extension {}\n{}".format(extension, exc))
 
 client.run(token)
